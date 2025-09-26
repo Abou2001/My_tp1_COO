@@ -166,11 +166,11 @@ class Machine(models.Model):
 
 
 class Fabrication(models.Model):
-    produit = models.CharField(max_length=100)
-    Utilisation_Matiere_Premiere = models.IntegerField()
+    produit = models.CharField()
+    utilisation_matiere_premiere = models.IntegerField()
     machines = models.IntegerField()
     ressources_humaines = models.IntegerField()
 
     def __str__(self):
-        return f"produit {self.produit}"
+        return f"Fabrication of {self.produit} (Matière première: {self.utilisation_matiere_premiere}, Machines: {self.machines}, RH: {self.ressources_humaines})"
         # fallback to primary key or the produit attribute --- IGNORE ---
