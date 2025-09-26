@@ -110,7 +110,7 @@ class Produit(models.Model):
 
 class Local(models.Model):
     nom = models.CharField(max_length=100)
-    Localisation = models.CharField(max_length=100)
+    localisation = models.CharField(max_length=100)
     surface = models.IntegerField()
     models.ForeignKey(
         "Produit",
@@ -166,7 +166,7 @@ class Machine(models.Model):
 
 
 class Fabrication(models.Model):
-    produit = models.IntegerField()
+    produit = models.CharField(max_length=100)
     Utilisation_Matiere_Premiere = models.IntegerField()
     machines = models.IntegerField()
     ressources_humaines = models.IntegerField()
